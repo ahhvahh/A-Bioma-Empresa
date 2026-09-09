@@ -2,13 +2,19 @@
 
 ## Objetivo
 
-Proteger os nomes, símbolos e identidades comerciais usados pela Bioma e pela Linha Fauna.
+Proteger os nomes, símbolos e identidades comerciais usados pela **Automações BIOMA** e por seus ecossistemas de produtos e serviços.
+
+## Identidade institucional definida
+
+- **Nome Comercial:** Automações BIOMA
+- **Acrônimo técnico:** Barramento de Integração e Orquestração de Módulos Autônomos.
+- **Identidade temática:** fauna e flora brasileiras.
 
 ## Marcas prioritárias
 
-1. **Bioma Brasil Automações** — marca institucional.
+1. **Automações BIOMA** — marca institucional.
 2. **Carcará HUB** — primeiro produto da Linha Fauna.
-3. Demais produtos serão avaliados conforme avanço do roadmap.
+3. Demais nomes serão avaliados conforme avanço real do roadmap.
 
 > A disponibilidade dos nomes deve ser confirmada por busca no INPI antes do depósito. Este repositório não considera nenhuma marca como “livre” sem essa verificação.
 
@@ -27,8 +33,8 @@ O INPI utiliza a Classificação Internacional de Nice. A descrição exata dos 
 ### 1. Busca preliminar
 
 - pesquisar `BIOMA`;
-- pesquisar `BIOMA BRASIL`;
-- pesquisar `BIOMA AUTOMAÇÕES`;
+- pesquisar `AUTOMAÇÕES BIOMA`;
+- pesquisar variações gráficas e fonéticas relevantes de `BIOMA`;
 - pesquisar `CARCARÁ`;
 - pesquisar `CARCARÁ HUB`;
 - analisar marcas semelhantes nas classes pretendidas;
@@ -38,7 +44,7 @@ O INPI utiliza a Classificação Internacional de Nice. A descrição exata dos 
 
 Avaliar o depósito de:
 
-- marca nominativa;
+- marca nominativa **Automações BIOMA**;
 - marca mista (nome + logotipo);
 - outras apresentações apenas quando houver justificativa comercial.
 
@@ -88,8 +94,8 @@ Segundo a tabela oficial vigente do INPI:
 
 ## Pendências de decisão
 
-- [ ] Confirmar nome empresarial definitivo.
-- [ ] Confirmar marca institucional definitiva.
+- [x] Confirmar nome comercial definitivo: **Automações BIOMA**.
+- [x] Confirmar marca institucional prioritária: **Automações BIOMA**.
 - [ ] Executar busca formal de anterioridade.
 - [ ] Definir classes e especificações.
 - [ ] Definir titular inicial.
