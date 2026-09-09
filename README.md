@@ -1,30 +1,74 @@
-# Bioma Brasil Automações
+# ⚙️ Automações BIOMA
 
-A **Bioma Brasil Automações** é uma iniciativa brasileira voltada ao desenvolvimento de hardware para Internet das Coisas (IoT), automação e plataformas de integração capazes de conectar o mundo físico ao digital.
+Empresa de engenharia focada no desenvolvimento de hardware para Internet das Coisas (IoT) e plataformas de ecossistemas digitais, especializada em traduzir o mundo físico para o digital de forma integrada, resiliente e automatizada.
 
-> **BIOMA** — Barramento de Inteligência e Operação de Módulos Autônomos.
+## 🏢 Arquitetura de Marca
+
+* **Nome Comercial:** Automações BIOMA
+* **Significado do Acrônimo Técnico (BIOMA):**
+  * **B**arramento de
+  * **I**ntegração e
+  * **O**rquestração de
+  * **M**ódulos
+  * **A**utônomos
+
+## 🐾 Portfólio de Hardware (Linha Fauna)
+
+* 🦅 **Carcará HUB:** Central inteligente e resiliente de processamento e transmissão de dados local para salas, casas e indústrias. Atua como o nó central coordenado pelo ecossistema de orquestração.
+
+## 🌿 Identidade dos Ecossistemas
+
+A Automações BIOMA utiliza exclusivamente referências à **fauna e à flora brasileiras** na organização e nomenclatura de seus ecossistemas, linhas, produtos e plataformas.
+
+- **Fauna:** identidade destinada principalmente aos dispositivos físicos e famílias de hardware IoT.
+- **Flora:** identidade reservada aos ecossistemas, plataformas e serviços digitais conforme sua evolução.
+
+Novos nomes deverão manter relação clara com espécies, biomas e elementos naturais brasileiros, preservando uma identidade tecnológica associada ao Brasil.
 
 ## Propósito
 
-Construir um ecossistema de dispositivos, serviços e software para capturar eventos do ambiente físico, processar dados localmente ou em nuvem e disponibilizar controle, telemetria e automação de forma resiliente.
+Construir um ecossistema de dispositivos, serviços e software capaz de capturar eventos do ambiente físico, processar informações localmente ou em infraestrutura remota e disponibilizar monitoramento, integração, orquestração e automação de forma resiliente.
+
+A plataforma não se limita à leitura de sensores. O ecossistema também deverá permitir a operação controlada de dispositivos físicos, incluindo atuadores, relés, fechaduras, cadeados eletrônicos, portas, portões e outros equipamentos compatíveis.
 
 ## Visão
 
-Uma sala, residência, comércio, indústria ou galpão produz dados e eventos continuamente. A Bioma busca criar a infraestrutura que permita transformar esses eventos em informação, automação e controle.
+Uma sala, residência, comércio, indústria ou galpão produz dados e eventos continuamente. A Automações BIOMA cria a infraestrutura necessária para transformar esses eventos em informação e também devolver comandos ao ambiente físico.
+
+```text
+Mundo físico
+    │
+    ├── Sensores ───────► dados / eventos
+    │
+    ▼
+Carcará HUB
+    │
+    ▼
+Ecossistema BIOMA
+    │
+    ├── Monitoramento
+    ├── Integração
+    ├── Orquestração
+    └── Comandos
+          │
+          ▼
+     Atuadores físicos
+     portas / portões /
+     fechaduras / relés
+```
 
 ## Ecossistema
 
 ```text
-BIOMA BRASIL AUTOMAÇÕES
+AUTOMAÇÕES BIOMA
 │
 ├── Produtos
 │   └── Linha Fauna
-│       ├── Carcará HUB
-│       ├── Guará Sensor
-│       └── Tatu Guard
+│       └── Carcará HUB
 │
 ├── Serviços
-│   └── Monitoramento, processamento e publicação de dados
+│   └── Monitoramento, processamento,
+│       publicação de dados e operação remota
 │
 └── Registro
     ├── Proteção de marca
@@ -32,21 +76,9 @@ BIOMA BRASIL AUTOMAÇÕES
     └── Checklist para comercialização
 ```
 
-## Linha Fauna
-
-A linha de hardware utiliza nomes de animais brasileiros associados a resiliência, adaptação e operação em ambientes diversos.
-
-| Produto | Papel | Status |
-|---|---|---|
-| **Carcará HUB** | Hub principal de comunicação, processamento e integração | Produto inicial |
-| **Guará Sensor** | Sensores periféricos para temperatura, umidade, presença e outras medições | Roadmap |
-| **Tatu Guard** | Segurança, criptografia, armazenamento e resiliência local | Roadmap |
-
-Detalhes em [`/Produtos`](Produtos/README.md).
-
 ## Serviços
 
-A camada de serviços será responsável por receber telemetria dos dispositivos, armazenar eventos, publicar dados para aplicações externas e disponibilizar APIs, dashboards e integrações.
+A camada de serviços será responsável por receber telemetria dos dispositivos, armazenar eventos, publicar dados para aplicações externas, disponibilizar APIs e dashboards e encaminhar comandos autorizados aos dispositivos físicos.
 
 Detalhes em [`/Servicos`](Servicos/README.md).
 
@@ -63,7 +95,7 @@ O plano documental está em [`/Registro`](Registro/README.md).
 A estratégia inicial combina:
 
 1. **Hardware:** venda e implantação dos dispositivos da Linha Fauna.
-2. **Software/SaaS:** acesso recorrente à plataforma de integração, telemetria, dashboards, APIs e gerenciamento remoto.
+2. **Software/SaaS:** acesso recorrente às plataformas de integração, telemetria, orquestração, APIs e gerenciamento remoto.
 3. **Serviços:** acompanhamento, publicação de dados, integrações e suporte operacional.
 
 ## Identidade visual
@@ -71,7 +103,7 @@ A estratégia inicial combina:
 Conceito: **metamorfose do físico para o digital**.
 
 - Elementos orgânicos no lado físico.
-- Circuitos, barramentos e nós no lado digital.
+- Circuitos, conexões e nós no lado digital.
 - Paleta-base: verde esmeralda, grafite e prata/cinza tecnológico.
 - Tipografia: sans-serif geométrica e moderna.
 
@@ -79,16 +111,16 @@ Conceito: **metamorfose do físico para o digital**.
 
 > O mundo real é físico. O seu controle deve ser digital.
 >
-> A Bioma Brasil Automações desenvolve hardware IoT e ecossistemas de integração para transformar sinais, eventos e medições do ambiente físico em dados úteis, automação e controle.
+> A Automações BIOMA desenvolve hardware IoT e ecossistemas de integração e orquestração capazes de transformar sinais, eventos e medições do ambiente físico em dados úteis e devolver ações controladas ao próprio ambiente.
 >
-> **Bioma Brasil Automações: inteligência de ponta, conectividade resiliente.**
+> **Automações BIOMA: integração entre o mundo físico e o digital.**
 
 ## Estrutura do repositório
 
 - [`Registro/`](Registro/README.md) — requisitos, documentos e passos regulatórios.
 - [`Produtos/`](Produtos/README.md) — arquitetura e hierarquia do portfólio.
-- [`Servicos/`](Servicos/README.md) — serviços de coleta, acompanhamento e publicação de dados.
+- [`Servicos/`](Servicos/README.md) — serviços de coleta, acompanhamento, publicação de dados e operação dos dispositivos.
 
 ## Status
 
-Este repositório documenta as decisões corporativas e técnicas iniciais da Bioma. O conteúdo evoluirá junto com o desenvolvimento e validação dos produtos.
+Este repositório documenta as decisões corporativas e técnicas iniciais da Automações BIOMA. O conteúdo evoluirá junto com o desenvolvimento e validação dos produtos.
