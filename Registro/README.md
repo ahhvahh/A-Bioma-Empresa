@@ -1,6 +1,13 @@
 # Registro e Conformidade
 
-Esta pasta organiza os passos e documentos necessários para proteger a marca e preparar os produtos da Bioma para comercialização no Brasil.
+Esta pasta organiza os passos e documentos necessários para proteger a marca e preparar os produtos da **Automações BIOMA** para comercialização no Brasil.
+
+## Identidade definida
+
+- **Nome Comercial:** Automações BIOMA
+- **Acrônimo técnico BIOMA:** Barramento de Integração e Orquestração de Módulos Autônomos.
+- **Identidade dos ecossistemas:** fauna e flora brasileiras.
+- **Primeiro produto:** Carcará HUB — Linha Fauna.
 
 ## Objetivos
 
@@ -14,11 +21,12 @@ Esta pasta organiza os passos e documentos necessários para proteger a marca e 
 
 ### Etapa 1 — Identidade e marca
 
-- Definir nome empresarial e nomes comerciais definitivos.
+- Registrar **Automações BIOMA** como marca institucional prioritária após busca de anterioridade.
 - Pesquisar anterioridades no INPI.
 - Definir classes de Nice adequadas.
 - Depositar as marcas prioritárias.
 - Registrar domínios de Internet relevantes.
+- Proteger nomes de produtos conforme entrada no roadmap comercial.
 
 Arquivo: [`01-marcas-inpi.md`](01-marcas-inpi.md)
 
