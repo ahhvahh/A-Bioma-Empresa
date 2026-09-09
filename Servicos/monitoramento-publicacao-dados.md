@@ -1,20 +1,20 @@
-# Monitoramento e Publicação de Dados
+# Monitoramento, Publicação de Dados e Orquestração
 
 ## Objetivo
 
-Criar o serviço responsável por receber, acompanhar, armazenar e disponibilizar os dados produzidos pelos sensores e hubs do ecossistema Bioma.
+Criar o serviço responsável por receber, acompanhar, armazenar e disponibilizar os dados produzidos pelos sensores e hubs do ecossistema **Automações BIOMA**, além de encaminhar comandos autorizados para dispositivos físicos.
 
 ## Fluxo conceitual
 
 ```text
-Sensores
+Sensores / Atuadores
    │
    ▼
 Carcará HUB
    │
    │ MQTT / HTTPS / protocolo seguro
    ▼
-Ingestão BIOMA
+Plataforma BIOMA
    │
    ├──► Normalização
    │       │
@@ -24,11 +24,23 @@ Ingestão BIOMA
    │       ├── estado atual
    │       └── histórico
    │
-   └──► Publicação
-           ├── API
-           ├── Webhooks
-           ├── MQTT/event bus
-           └── Dashboard
+   ├──► Publicação
+   │       ├── API
+   │       ├── Webhooks
+   │       ├── MQTT/event bus
+   │       └── Dashboard
+   │
+   └──► Orquestração
+           ├── comandos
+           ├── autorização
+           ├── confirmação
+           └── auditoria
+                    │
+                    ▼
+              Carcará HUB
+                    │
+                    ▼
+              Atuadores físicos
 ```
 
 ## Entidades mínimas
@@ -38,6 +50,7 @@ Ingestão BIOMA
 - **Hub** — Carcará HUB associado ao cliente/ambiente.
 - **Dispositivo** — sensor ou atuador conectado ao HUB.
 - **Sensor** — origem de uma ou mais grandezas medidas.
+- **Atuador** — dispositivo capaz de executar uma ação física.
 - **Medição** — valor capturado em determinado instante.
 - **Evento** — ocorrência relevante derivada de dispositivo, regra ou sistema.
 - **Comando** — solicitação enviada da plataforma para o HUB/dispositivo.
@@ -56,6 +69,7 @@ Fluxo inicial proposto:
 6. Plataforma associa o HUB a um cliente quando provisionado.
 7. Plataforma devolve configuração autorizada e estado conhecido.
 8. HUB passa a publicar telemetria usando sua identidade e o contexto do cliente.
+9. HUB passa a receber comandos compatíveis com suas permissões e capacidades.
 
 ## Telemetria mínima do HUB
 
@@ -84,6 +98,20 @@ Cada medição deve possuir no mínimo:
 - timestamp de origem;
 - qualidade/status da leitura, quando aplicável.
 
+## Atuadores e ações físicas
+
+Cada atuador deverá declarar suas capacidades. Exemplos:
+
+- relé: ligar/desligar;
+- porta: abrir/fechar, quando houver mecanismo compatível;
+- portão: abrir/fechar/parar;
+- fechadura: bloquear/liberar;
+- cadeado eletrônico: bloquear/liberar;
+- iluminação: ligar/desligar/regular, quando suportado;
+- motor: iniciar/parar/posicionar, conforme dispositivo.
+
+A plataforma não deve assumir capacidades que o dispositivo não tenha declarado.
+
 ## Publicação para terceiros
 
 ### API
@@ -94,7 +122,9 @@ Usar APIs versionadas para:
 - consultar estado atual;
 - consultar histórico;
 - consultar eventos;
-- enviar comandos autorizados.
+- consultar capacidades de atuadores;
+- enviar comandos autorizados;
+- consultar resultado de comandos.
 
 ### Webhooks
 
@@ -107,11 +137,12 @@ Exemplos:
 - HUB reiniciou;
 - presença detectada;
 - bateria baixa;
-- comando concluído/falhou.
+- comando concluído/falhou;
+- alteração de estado de uma porta, portão ou fechadura.
 
 ### Mensageria
 
-Quando necessário, disponibilizar integração por MQTT ou barramento de eventos para clientes que precisem consumo contínuo de telemetria.
+Quando necessário, disponibilizar integração por MQTT ou sistema interno de eventos para clientes que precisem de consumo contínuo de telemetria.
 
 ## Comandos remotos
 
@@ -124,10 +155,13 @@ Todo comando deve possuir:
 - parâmetros;
 - timestamp;
 - expiração;
-- estado: criado, enviado, recebido, executado, falhou ou expirou;
+- política de autorização;
+- estado: criado, autorizado, enviado, recebido, executado, falhou ou expirou;
 - resultado.
 
 Não assumir que a entrega da mensagem significa execução do comando.
+
+Para operações físicas críticas, a plataforma deverá registrar quem solicitou a ação, qual dispositivo recebeu o comando e qual foi o resultado informado.
 
 ## Segurança
 
@@ -137,16 +171,18 @@ Requisitos iniciais:
 - autenticação mútua ou mecanismo equivalente;
 - TLS;
 - rotação/revogação de credenciais;
-- autorização por cliente e dispositivo;
+- autorização por cliente, usuário e dispositivo;
 - segregação multi-tenant;
 - trilha de auditoria;
 - proteção contra replay de comandos;
+- expiração de comandos;
 - atualização segura de firmware;
-- princípio do menor privilégio.
+- princípio do menor privilégio;
+- políticas específicas para comandos de acesso físico.
 
 ## Operação offline
 
-O HUB deverá manter funções essenciais quando a plataforma estiver indisponível.
+O HUB deverá manter funções essenciais previamente definidas quando a plataforma estiver indisponível.
 
 Quando a conexão retornar:
 
@@ -154,7 +190,8 @@ Quando a conexão retornar:
 2. sincronizar estado;
 3. enviar eventos pendentes conforme política de retenção;
 4. resolver divergências de configuração;
-5. retomar publicação normal.
+5. reconciliar comandos pendentes conforme validade e política de segurança;
+6. retomar publicação normal.
 
 ## Retenção
 
@@ -163,6 +200,8 @@ Definir políticas separadas para:
 - estado atual;
 - telemetria bruta;
 - eventos;
+- comandos;
+- confirmações de execução;
 - logs técnicos;
 - auditoria;
 - dados pessoais, se existirem.
@@ -179,7 +218,7 @@ Antes de armazenar dados que possam identificar ou ser associados a pessoas:
 - registrar compartilhamentos;
 - permitir atendimento aos direitos aplicáveis dos titulares.
 
-Sensores ambientais sem identificação pessoal direta ainda devem ser avaliados pelo contexto de uso, especialmente presença, ocupação e rotinas.
+Sensores ambientais sem identificação pessoal direta ainda devem ser avaliados pelo contexto de uso, especialmente presença, ocupação, controle de acesso e rotinas.
 
 ## Próximas decisões técnicas
 
@@ -187,9 +226,12 @@ Sensores ambientais sem identificação pessoal direta ainda devem ser avaliados
 - [ ] formato de mensagem e versionamento.
 - [ ] estratégia de autenticação do HUB.
 - [ ] cadastro/provisionamento inicial.
+- [ ] modelo de capacidades dos dispositivos.
+- [ ] modelo de comandos e respostas.
+- [ ] política de autorização para ações físicas.
 - [ ] banco para estado atual.
 - [ ] banco para séries temporais/histórico.
-- [ ] barramento interno de eventos.
+- [ ] sistema interno de eventos.
 - [ ] política de retenção.
 - [ ] modelo multi-tenant.
 - [ ] API pública.
