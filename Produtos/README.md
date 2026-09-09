@@ -1,74 +1,66 @@
 # Produtos
 
-Esta pasta documenta a hierarquia de produtos da Bioma Brasil Automações.
+Esta pasta documenta a hierarquia de produtos da **Automações BIOMA**.
 
-## Hierarquia
+## 🏢 Arquitetura de Marca
+
+* **Nome Comercial:** Automações BIOMA
+* **Significado do Acrônimo Técnico (BIOMA):**
+  * **B**arramento de
+  * **I**ntegração e
+  * **O**rquestração de
+  * **M**ódulos
+  * **A**utônomos
+
+## 🐾 Portfólio de Hardware (Linha Fauna)
 
 ```text
-BIOMA BRASIL AUTOMAÇÕES
+AUTOMAÇÕES BIOMA
 └── Linha Fauna
-    ├── Carcará HUB
-    │   └── Hub principal / gateway / processamento local
-    ├── Guará Sensor
-    │   └── Sensores periféricos e telemetria ambiental
-    └── Tatu Guard
-        └── Segurança, resiliência e armazenamento local
+    └── Carcará HUB
+        └── Central de processamento,
+            integração e transmissão local
 ```
 
-## Estratégia da Linha Fauna
-
-A linha utiliza nomes de animais brasileiros para identificar famílias de dispositivos físicos. Cada família deverá ter finalidade clara e evitar sobreposição desnecessária de funções.
-
-## 1. Carcará HUB
+### 🦅 Carcará HUB
 
 **Status:** produto principal / primeira prioridade.
 
+Central inteligente e resiliente de processamento e transmissão de dados local para salas, casas e indústrias. Atua como o nó central coordenado pelo ecossistema de orquestração.
+
 Funções previstas:
 
-- concentrar dispositivos e sensores;
+- concentrar dispositivos, sensores e atuadores;
 - operar como gateway Zigbee;
 - processar regras e eventos localmente;
-- comunicar-se com a plataforma Bioma;
+- comunicar-se com a plataforma BIOMA;
 - publicar telemetria;
 - receber comandos remotos autorizados;
+- acionar dispositivos físicos compatíveis;
 - manter operação degradada quando a conexão externa falhar.
 
-Diretriz: priorizar resiliência, operação local e recuperação automática após falhas de energia/rede.
+Exemplos de dispositivos que poderão ser controlados conforme integração e autorização:
+
+- relés;
+- fechaduras;
+- cadeados eletrônicos;
+- portas;
+- portões;
+- iluminação;
+- motores e outros atuadores compatíveis.
+
+Diretriz: priorizar resiliência, segurança, rastreabilidade e recuperação automática após falhas de energia ou rede.
 
 Arquivo: [`carcara-hub.md`](carcara-hub.md)
 
-## 2. Guará Sensor
+## 🌿 Regra de identidade para novos produtos
 
-**Status:** roadmap.
+A nomenclatura dos produtos e ecossistemas da Automações BIOMA deverá utilizar exclusivamente referências à **fauna e flora brasileiras**.
 
-Família destinada a módulos periféricos de aquisição de dados.
+- **Linha Fauna:** famílias de hardware, dispositivos, sensores, gateways e atuadores.
+- **Flora:** nomes destinados a plataformas, serviços ou ecossistemas digitais quando esses produtos forem formalmente definidos.
 
-Exemplos:
-
-- temperatura;
-- umidade;
-- presença/movimento;
-- abertura;
-- luminosidade;
-- qualidade ambiental;
-- outros sensores definidos por aplicação.
-
-Diretriz: baixo consumo, instalação simples e comunicação confiável com o Carcará HUB.
-
-## 3. Tatu Guard
-
-**Status:** roadmap.
-
-Família destinada a funções de proteção e continuidade do ecossistema.
-
-Possíveis responsabilidades:
-
-- armazenamento local seguro;
-- backup de eventos;
-- gestão de chaves/credenciais;
-- isolamento de serviços;
-- contingência de conectividade;
-- auditoria e integridade de dados.
+Nenhum novo produto deve ser incluído no portfólio oficial antes de sua função e posicionamento serem documentados.
 
 ## Regras para novos produtos
 
@@ -76,19 +68,21 @@ Todo novo produto deve registrar:
 
 1. problema que resolve;
 2. público-alvo;
-3. posição na Linha Fauna;
-4. interfaces físicas e de comunicação;
-5. relação com o Carcará HUB e a plataforma;
-6. requisitos de energia;
-7. requisitos regulatórios;
-8. estratégia de atualização;
-9. modelo de comercialização;
-10. status: conceito, protótipo, validação, piloto ou produção.
+3. posição no ecossistema BIOMA;
+4. relação com fauna ou flora brasileira;
+5. interfaces físicas e de comunicação;
+6. relação com o Carcará HUB e a plataforma;
+7. requisitos de energia;
+8. requisitos regulatórios;
+9. estratégia de atualização;
+10. modelo de comercialização;
+11. status: conceito, protótipo, validação, piloto ou produção.
 
 ## Próximos passos
 
 - [ ] Fechar requisitos da primeira revisão do Carcará HUB.
 - [ ] Definir arquitetura da plataforma de serviços.
 - [ ] Definir contrato de comunicação dispositivo ↔ plataforma.
-- [ ] Definir primeiro conjunto de sensores Guará.
-- [ ] Revisar a necessidade e o escopo do Tatu Guard após validar o HUB.
+- [ ] Definir modelo de comandos e respostas para atuadores.
+- [ ] Definir regras de autorização para ações físicas críticas.
+- [ ] Formalizar novos produtos apenas após definição de escopo.
