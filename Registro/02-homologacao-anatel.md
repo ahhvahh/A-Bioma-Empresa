@@ -1,6 +1,6 @@
 # Certificação e Homologação — Anatel
 
-## Aplicação ao ecossistema Bioma
+## Aplicação ao ecossistema Automações BIOMA
 
 Produtos que incorporam interfaces de telecomunicações/radiofrequência — por exemplo Zigbee, Wi‑Fi e Bluetooth — devem ter o enquadramento regulatório verificado antes da comercialização no Brasil.
 
@@ -8,7 +8,7 @@ A Anatel estabelece que a homologação é pré-requisito obrigatório para come
 
 ## Produto inicial
 
-### Carcará HUB
+### Carcará HUB — Linha Fauna
 
 Interfaces previstas:
 
