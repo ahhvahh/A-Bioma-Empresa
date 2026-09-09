@@ -1,12 +1,14 @@
 # Serviços
 
-Esta pasta documenta os serviços digitais e operacionais da Bioma Brasil Automações.
+Esta pasta documenta os serviços digitais e operacionais da **Automações BIOMA**.
 
 ## Serviço principal
 
-### Acompanhamento e publicação de dados dos sensores
+### Acompanhamento, publicação de dados e operação de dispositivos
 
 A plataforma receberá dados dos dispositivos da Linha Fauna, acompanhará seu estado operacional e disponibilizará essas informações para aplicações, dashboards e integrações externas.
+
+Além do monitoramento, a plataforma também deverá permitir o envio de comandos autorizados para atuação sobre dispositivos físicos conectados ao ecossistema BIOMA.
 
 Arquivo: [`monitoramento-publicacao-dados.md`](monitoramento-publicacao-dados.md)
 
@@ -22,16 +24,31 @@ Arquivo: [`monitoramento-publicacao-dados.md`](monitoramento-publicacao-dados.md
 - dashboards operacionais;
 - alertas;
 - envio de comandos autorizados para dispositivos;
+- confirmação e auditoria da execução de comandos;
 - controle de versão e atualização de firmware;
 - auditoria de operações relevantes.
+
+## Operação sobre dispositivos físicos
+
+A plataforma poderá orquestrar ações como:
+
+- abrir ou fechar portas;
+- abrir ou fechar portões;
+- liberar ou bloquear fechaduras;
+- liberar cadeados eletrônicos;
+- acionar relés;
+- controlar iluminação;
+- comandar motores e outros atuadores compatíveis.
+
+A disponibilidade de cada ação dependerá das capacidades do dispositivo, das permissões do usuário e das regras de segurança configuradas.
 
 ## Modelo de serviço
 
 A plataforma poderá operar em modalidades distintas:
 
-1. **Cloud/SaaS:** infraestrutura gerenciada pela Bioma.
+1. **Cloud/SaaS:** infraestrutura gerenciada pela Automações BIOMA.
 2. **Local/On-premises:** instalação controlada em ambiente do cliente, quando necessário.
-3. **Híbrido:** processamento e automação local com sincronização seletiva para a plataforma.
+3. **Híbrido:** processamento e operação local com sincronização seletiva para a plataforma.
 
 ## Princípios
 
@@ -43,7 +60,8 @@ A plataforma poderá operar em modalidades distintas:
 - observabilidade;
 - retenção de dados configurável;
 - minimização de dados pessoais;
-- rastreabilidade das ações administrativas.
+- rastreabilidade das ações administrativas e físicas;
+- confirmação de resultado para comandos críticos sempre que possível.
 
 ## Roadmap
 
@@ -60,6 +78,8 @@ A plataforma poderá operar em modalidades distintas:
 - [ ] comandos para o HUB;
 - [ ] configuração remota;
 - [ ] sincronização de dispositivos;
+- [ ] comandos para atuadores;
+- [ ] confirmação de execução;
 - [ ] acompanhamento de firmware;
 - [ ] alertas operacionais.
 
@@ -80,3 +100,7 @@ A plataforma poderá operar em modalidades distintas:
 - [ ] análise de dados;
 - [ ] regras e automações avançadas;
 - [ ] catálogo de dispositivos e serviços.
+
+## Identidade dos ecossistemas
+
+As plataformas e serviços da Automações BIOMA deverão seguir a identidade baseada exclusivamente na **fauna e flora brasileiras**. Novos nomes de plataformas e serviços serão formalizados apenas quando seus respectivos escopos estiverem definidos.
